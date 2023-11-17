@@ -13,7 +13,7 @@ contract NounsDAOTributeLedgerTest is Test {
 
     function testAddTribute() public {
         string memory testMessage = "Thank you for your contribution!";
-        uint256 testEventId = 1;
+        address testEventId = address(123);  // Example POAP address
         ledger.addTribute(testMessage, testEventId);
 
         assertEq(ledger.getTributeCount(), 1, "Tribute count should be 1 after adding a tribute");
