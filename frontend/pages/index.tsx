@@ -2,8 +2,15 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { getContract } from "@wagmi/core";
+import { abi } from "../../out/NounsDAOTributeLedger.sol/NounsDAOTributeLedger.json";
 
 const Home: NextPage = () => {
+  // Contract deployed at https://sepolia.scrollscan.com/address/0x1b72e83497c653650f51533afea8923bc7189f66
+  const contract = getContract({
+    address: "0x1b72e83497c653650f51533afea8923bc7189f66",
+    abi: abi,
+  });
   return (
     <div className={styles.container}>
       <Head>
